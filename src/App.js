@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// import { elasticsearch } from 'elasticsearch';
-
-// const client = new elasticsearch.Client({
-//   hosts: ['http//localhost:9200']
-// });
 const indexName = "kids-central-activities";
 const docType = 'activity';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    // var elasticsearch = require('elasticsearch');
+    var elasticsearch = require('elasticsearch');
     this.state = {
+      client: new elasticsearch.Client(),
       location: '',
       age: '',
       startDate: '',
@@ -32,21 +28,21 @@ class App extends Component {
     });
   }
   performQuery = () => {
-    // client.search({
-    //   index: indexName,
-    //   type: docType,
-    //   body: {
-    //     query: {
-    //       match: {
-    //         "location": this.state.location
-    //       }
-    //     }
-    //   }
-    // }).then(function (resp) {
-    //   console.log(resp);
-    // }, function (err) {
-    //   console.trace(err.message);
-    // });
+    client.search({
+      index: indexName,
+      type: docType,
+      body: {
+        query: {
+          match: {
+            "location": this.state.location
+          }
+        }
+      }
+    }).then(function (resp) {
+      console.log(resp);
+    }, function (err) {
+      console.trace(err.message);
+    });
   }
   render() {
     return (
