@@ -8,9 +8,8 @@ class App extends Component {
     startDate: '',
     endDate: ''
   }
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('event happended handleSubmit');
+  handleSubmit = () => {
+    console.log(this.state);
   }
   handleChange = propertyName => (event) => {
     console.log(this.state)
@@ -24,49 +23,67 @@ class App extends Component {
         <header>
           <h2>Kids Play Central</h2>
         </header>
-        <div>
+
+        <div className="form">
           <h2>Search Form</h2>
-          <pre>
+          {/* <pre>
             {JSON.stringify(this.state)}
-          </pre>
+          </pre> */}
+
           <label>
             Location:
-              <input
-              type="text"
-              placeholder="Location"
-              onChange={this.handleChange('location')}
-            />
           </label>
+          <input
+            type="text"
+            placeholder="Location"
+            onChange={this.handleChange('location')}
+          />
           <br />
-          <label>
-            Age:
-              <input
+
+          <div className="div-block">
+            <label className="inline-text">
+              Start Date:
+            </label>
+            <input
+              type="date"
+              placeholder="Start Date"
+              onChange={this.handleChange('startDate')}
+              className="input-date"
+            />
+          </div>
+
+          <div className="div-block">
+            <label className="inline-text">
+              End Date:
+            </label>
+            <input
+              type="date"
+              placeholder="End Date"
+              onChange={this.handleChange('endDate')}
+              className="input-date"
+            />
+          </div>
+          <br />
+
+          <div className="div-block">
+            <label className="inline-text">
+              Age:
+          </label>
+            <input
               type="number"
               placeholder="Age"
               onChange={this.handleChange('age')}
             />
-          </label>
+          </div>
           <br />
-          <label>
-            Start Date:
-              <input
-              type="date"
-              placeholder="Start Date"
-              onChange={this.handleChange('startDate')}
-            />
-          </label>
-          <label>
-            End Date:
-              <input
-              type="date"
-              placeholder="End Date"
-              onChange={this.handleChange('endDate')}
-            />
-          </label>
-          <br />
-          <label>
-            <button onClick={this.handleSubmit}>Submit</button>
-          </label>
+
+          <div className="div-block">
+            <button
+              onClick={this.handleSubmit}
+            >
+              Submit
+            </button>
+          </div>
         </div>
         <div>
           <h2>Search Results</h2>
