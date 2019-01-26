@@ -5,12 +5,12 @@ class App extends Component {
   state = {
     location: '',
     age: '',
-    startDate: '',
+    startDate: new Date().toLocaleString(),
     endDate: ''
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('event happended handleSubmit');
+    console.log(this.state);
   }
   handleChange = propertyName => (event) => {
     console.log(this.state)
