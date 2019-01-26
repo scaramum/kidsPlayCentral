@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project assumes that elasticsearch is running seprately on it's defualt port 9200.
 
 ## Available Scripts
 
