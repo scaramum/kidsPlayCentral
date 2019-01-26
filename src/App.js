@@ -19,7 +19,7 @@ class App extends Component {
   }
   handleSubmit = () => {
     console.log(this.state);
-    // this.performQuery();
+    this.performQuery();
   }
   handleChange = propertyName => (event) => {
     console.log(this.state)
@@ -28,7 +28,7 @@ class App extends Component {
     });
   }
   performQuery = () => {
-    client.search({
+    this.state.client.search({
       index: indexName,
       type: docType,
       body: {
