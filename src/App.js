@@ -1,32 +1,29 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import 'elasticsearch';
+// import { elasticsearch } from 'elasticsearch';
 
+// const client = new elasticsearch.Client({
+//   hosts: ['http//localhost:9200']
+// });
 const indexName = "kids-central-activities";
 const docType = 'activity';
 
 class App extends Component {
-
   constructor(props) {
     super(props);
-    var elasticsearch = require('elasticsearch');
-    // this.client = new elasticsearch.Client({
-    //   hosts: ['http//localhost:9200']
-    // });
+    // var elasticsearch = require('elasticsearch');
     this.state = {
-      client: new elasticsearch.Client({
-        hosts: ['http//localhost:9200']
-      }),
       location: '',
       age: '',
       startDate: '',
-      endDate: ''
+      endDate: '',
+      type: 'Art'
     }
   }
   handleSubmit = () => {
     console.log(this.state);
-    this.performQuery();
+    // this.performQuery();
   }
   handleChange = propertyName => (event) => {
     console.log(this.state)
@@ -35,21 +32,21 @@ class App extends Component {
     });
   }
   performQuery = () => {
-    this.state.client.search({
-      index: indexName,
-      type: docType,
-      body: {
-        query: {
-          match: {
-            "location": this.state.location
-          }
-        }
-      }
-    }).then(function (resp) {
-      console.log(resp);
-    }, function (err) {
-      console.trace(err.message);
-    });
+    // client.search({
+    //   index: indexName,
+    //   type: docType,
+    //   body: {
+    //     query: {
+    //       match: {
+    //         "location": this.state.location
+    //       }
+    //     }
+    //   }
+    // }).then(function (resp) {
+    //   console.log(resp);
+    // }, function (err) {
+    //   console.trace(err.message);
+    // });
   }
   render() {
     return (
@@ -107,17 +104,29 @@ class App extends Component {
               type="number"
               placeholder="Age"
               onChange={this.handleChange('age')}
+              className="input-age"
             />
           </div>
-          <br />
 
           <div className="div-block">
-            <button
-              onClick={this.handleSubmit}
-            >
-              Submit
-            </button>
+            <label className="inline-text">
+              Activity Type:
+            </label>
+            <select onChange={this.handleChange('type')}>
+              <option value={'Art'}>Art</option>
+              <option value={'Language'}>Language</option>
+              <option value={'Outdoors'}>Outdoors</option>
+              <option value={'Sports'}>Sports</option>
+              <option value={'STEM'}>STEM</option>
+            </select>
           </div>
+
+          <br />
+          <button
+            onClick={this.handleSubmit}
+          >
+            Search
+          </button>
         </div>
         <div>
           <h2>Search Results</h2>
