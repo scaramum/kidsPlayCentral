@@ -11,13 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     var elasticsearch = require('elasticsearch');
-    // this.client = new elasticsearch.Client({
-    //   hosts: ['http//localhost:9200']
-    // });
     this.state = {
-      client: new elasticsearch.Client({
-        hosts: ['http//localhost:9200']
-      }),
+      client: new elasticsearch.Client(),
       location: '',
       age: '',
       startDate: '',
