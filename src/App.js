@@ -1,20 +1,54 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import 'elasticsearch';
+
+const indexName = "kids-central-activities";
+const docType = 'activity';
+
 class App extends Component {
-  state = {
-    location: '',
-    age: '',
-    startDate: '',
-    endDate: ''
+
+  constructor(props) {
+    super(props);
+    var elasticsearch = require('elasticsearch');
+    // this.client = new elasticsearch.Client({
+    //   hosts: ['http//localhost:9200']
+    // });
+    this.state = {
+      client: new elasticsearch.Client({
+        hosts: ['http//localhost:9200']
+      }),
+      location: '',
+      age: '',
+      startDate: '',
+      endDate: ''
+    }
   }
   handleSubmit = () => {
     console.log(this.state);
+    this.performQuery();
   }
   handleChange = propertyName => (event) => {
     console.log(this.state)
     this.setState({
       [propertyName]: event.target.value,
+    });
+  }
+  performQuery = () => {
+    this.state.client.search({
+      index: indexName,
+      type: docType,
+      body: {
+        query: {
+          match: {
+            "location": this.state.location
+          }
+        }
+      }
+    }).then(function (resp) {
+      console.log(resp);
+    }, function (err) {
+      console.trace(err.message);
     });
   }
   render() {
