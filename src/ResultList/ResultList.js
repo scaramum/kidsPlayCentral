@@ -20,12 +20,13 @@ class ResultList extends Component {
             <div className="result-detail-box"
               key={result._id}
             > 
-              <span>{result._source.provider}</span>
-              <h3>{result._source.activity}</h3>
-              <img 
+              <img
                 src={result._source.img}
                 alt={result._source.activity}
+                className="result-img"
               />
+              <span>{result._source.provider}</span>
+              <h3>{result._source.activity}</h3>
               {result._type === 'daycare'
                 ? 
                 <>

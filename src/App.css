@@ -86,11 +86,18 @@ select {
 }
 
 .result-detail-box {
+  width: 383px;
   height: auto;
   border: 2px solid #707070;
   border-radius: 10px;
   margin: 5px;
   padding: 7px;
+}
+
+.result-img {
+  padding: 5px;
+  width: 378px;
+  height: 240px;
 }
 
 h2, h3 {
