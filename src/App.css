@@ -130,6 +130,7 @@ h2, h3 {
 }
 
 .link {
-  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
   color: hsl(0, 0%, 28%);
 }

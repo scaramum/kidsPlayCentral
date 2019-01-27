@@ -66,14 +66,24 @@ class App extends Component {
       console.trace(err.message);
     });
   }
+  handleReset = () => {
+    // window.location.reload();
+    this.setState({
+      resp: null,
+    });
+  }
   render() {
     return (
       <Router>
       <div className="App">
           <header>
             <h1>
-              <Link 
+              {/* <Link 
                 to="/"
+                className="link"
+              > */}
+              <button
+                onClick={this.handleReset}
                 className="link"
               >
               <FontAwesomeIcon 
@@ -82,7 +92,8 @@ class App extends Component {
               /> 
               {' '} 
               Ready Play
-              </Link>
+              </button>
+              {/* </Link> */}
             </h1>
             <img src="https://pli.io/2OVjSU.png" alt="header img" className="img-header" />
           </header>
@@ -95,7 +106,7 @@ class App extends Component {
 
             <label>
               Location:
-          </label>
+            </label>
             <input
               type="text"
               placeholder="Enter a zip code"

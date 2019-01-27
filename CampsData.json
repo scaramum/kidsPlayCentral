@@ -10,8 +10,8 @@
     "cost": 1500,
     "provider": "St. Paul Rec.",
     "type": "Overnight",
-    "activityStartDate": "2019-08-09",
-    "activityEndDate": "2019-08-14",
+    "activityStartDate": "2019-08-12",
+    "activityEndDate": "2019-08-16",
     "registrationURL": "https://apm.activecommunities.com/saintpaul/Activity_Search/minecraft-creative-arlington-hills/49192",
     "registrationStartDate": "2019-06-01",
     "img": "https://pli.io/2OaiNB.jpg"
@@ -19,7 +19,7 @@
  {
     "activity": "Java Minecraft Mod Development Camp",
     "description": "Write and edit your own Minecraft mods. Watch your code come to life. Learn the basics of Java Coding with Minecraft!",
-    "location": "55113",
+    "location": "55119",
     "radius": "Within 30 miles",
     "amenities": ["accessible", "transportation provided", "before care", "after care"],
     "minAge": 10, 
@@ -28,8 +28,8 @@
     "cost": 1500,
     "provider": "Roseville Tech Academy",
     "type": "Overnight",
-    "activityStartDate": "2019-06-10",
-    "activityEndDate": "2019-06-15",
+    "activityStartDate": "2019-08-12",
+    "activityEndDate": "2019-08-14",
     "registrationURL": "http://www.techacademymn.com/events/minecraft-game-designer-6-12/",
     "registrationStartDate": "2019-02-01T06:00:00",
     "img": "https://pli.io/2OaiNB.jpg"
@@ -46,7 +46,7 @@
     "cost": 80,
     "provider": "Stillwater Community Ed",
     "type": "Day Camp",
-    "activityStartDate": "2019-08-10",
+    "activityStartDate": "2019-08-12",
     "activityEndDate": "2019-08-17",
     "registrationURL": "https://stillwater.ce.eleyo.com/course/2216/spring-summer-2018/robotic-builders",
     "registrationStartDate": "2019-02-01",
@@ -55,7 +55,7 @@
  {
     "activity": "Intro to Coding - Preschool Camp",
     "description": "Our hands-on exploration of coding introduces students to the basic concepts of programming, math & problem-solving. We will work on small coding projects, each designed to teach core programming concepts.",
-    "location": "55125",
+    "location": "55119",
     "radius": "Within 10 miles",
     "amenities": ["before care", "after care"],
     "minAge": 4, 
@@ -91,7 +91,7 @@
  {
     "activity": "Nike Tennis Camp at University of Minnesota",
     "description": "The University of Minnesota Nike Tennis Camp is a summer camp for kids (ages 9-18) to improve their tennis game. Beginner, intermediate, and tournament players come from all over to play at our beautiful 22 court facility to participate in this fun and challenging program.",
-    "location": "55455",
+    "location": "55109",
     "radius": "Within 20 miles",
     "amenities": ["before care", "after care"],
     "minAge": 9, 
@@ -100,8 +100,8 @@
     "cost": 1400,
     "provider": "University of Minnesota, Minneapolis Campus",
     "type": "Overnight",
-    "activityStartDate": "2019-06-23",
-    "activityEndDate": "2019-06-27",
+    "activityStartDate": "2019-08-12",
+    "activityEndDate": "2019-08-17",
     "registrationURL": "https://www.ussportscamps.com/tennis/nike/university-of-minnesota-nike-tennis-camp#detailsContent",
     "registrationStartDate": "2019-01-15",
     "img": "https://pli.io/2Od2KW.jpg"
