@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
 
 class ResultList extends Component {
   handleDetail = (id) => {
-    console.log('in handleDetail', id);
+    // console.log('in handleDetail', id);
     this.props.history.push(`/learn-more`);
   }
   render() {
     if(!this.props.resp) {
       return null;
     } 
-    console.log('this is the result', this.props.resp.hits.hits);
+    // console.log('this is the result', this.props.resp.hits.hits);
     return (
       <div className="results">
         <h2>Search Results</h2>

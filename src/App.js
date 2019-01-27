@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ResultList from './ResultList/ResultList';
 import DetailedPage from './DetailedPage';
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faChild } from '@fortawesome/free-solid-svg-icons'
@@ -23,11 +23,11 @@ class App extends Component {
     }
   }
   handleSubmit = () => {
-    console.log(this.state);
+    // console.log(this.state);
     this.performQuery();
   }
   handleChange = propertyName => (event) => {
-    console.log(this.state)
+    // console.log(this.state)
     this.setState({
       [propertyName]: event.target.value,
     });
@@ -58,7 +58,7 @@ class App extends Component {
       type: this.state.type,
       body: innerQuery
     }).then((resp) => {
-      console.log(resp);
+      // console.log(resp);
       this.setState({
         resp: resp
       })
