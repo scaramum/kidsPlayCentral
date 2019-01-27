@@ -9,10 +9,10 @@
     "cost": 10,
     "provider": "St. Paul Rec.",
     "daysAvaliable": "Thu",
-    "activityStartDate": "2019-04-04T13:00:00",
-    "activityEndDate": "2019-04-04T16:30:00",
+    "activityStartDate": "2019-04-04",
+    "activityEndDate": "2019-04-04",
     "registrationURL": "https://apm.activecommunities.com/saintpaul/Activity_Search/spring-break-swimming-trip-northwest-como/53786",
-    "registrationStartDate": "2018-12-03T06:00:00",
+    "registrationStartDate": "2018-12-03",
     "img": "https://pli.io/2OdmOT.jpg"
  },
  {
@@ -26,10 +26,10 @@
     "cost": 44,
     "provider": "St. Paul Rec.",
     "daysAvaliable": "Tue",
-    "activityStartDate": "2019-03-12T18:00:00",
-    "activityEndDate": "2019-04-16T18:45:00",
+    "activityStartDate": "2019-03-12",
+    "activityEndDate": "2019-04-16",
     "registrationURL": "https://apm.activecommunities.com/saintpaul/Activity_Search/dance-ballet-tap-ages-3-5-6-session-2-phalen/53577",
-    "registrationStartDate": "2018-12-03T06:00:00",
+    "registrationStartDate": "2018-12-03",
     "img": "https://pli.io/2OadBO.jpg"
  },
  {
@@ -43,9 +43,9 @@
     "cost": 45,
     "provider": "District 196 Community Education",
     "daysAvaliable": "Mon",
-    "activityStartDate": "2019-02-11T17:30:00",
-    "activityEndDate": "2019-03-18T18:30:00",
+    "activityStartDate": "2019-02-11",
+    "activityEndDate": "2019-03-18",
     "registrationURL": "https://district196.ce.eleyo.com/course/24516/youth-winter-2019/group-guitar-lessons-ages-9-15",
-    "registrationStartDate": "2019-01-26T06:00:00",
+    "registrationStartDate": "2019-01-26",
     "img": "https://pli.io/2Oaa5y.jpg"
  }]

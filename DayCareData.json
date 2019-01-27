@@ -14,7 +14,7 @@
     "dropoffTime": "06:30:00ZZ",
     "pickupTime": "18:00:00ZZ",
     "URL": "https://slpcommunityed.com/childcare/",
-    "registrationStartDate": "2019-02-01T06:00:00",
+    "registrationStartDate": "2019-02-01",
     "img": "https://pli.io/2OacCC.jpg"
  },
  {
@@ -33,7 +33,7 @@
     "dropoffTime": "06:30:00ZZ",
     "pickupTime": "18:00:00ZZ",
     "URL": "https://www.kinderberryhill.com/schools/woodbury/",
-    "registrationStartDate": "2019-10-01T06:00:00",
+    "registrationStartDate": "2019-10-01",
     "img": "https://pli.io/2OaziJ.jpg"
  },
  {
@@ -52,6 +52,6 @@
     "dropoffTime": "08:30:00ZZ",
     "pickupTime": "20:00:00ZZ",
     "URL": "https://www.ymcamn.org/child_care__preschool/summer_programs",
-    "registrationStartDate": "2019-02-01T06:00:00",
+    "registrationStartDate": "2019-02-01",
     "img": "https://pli.io/2OaUb3.jpg"
  }]
