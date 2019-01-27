@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     if(!this.props.resp) {
       return null;
-    }
+    } 
     console.log('this is the result', this.props.resp.hits.hits);
     return (
       <div className="results">
@@ -16,15 +16,30 @@ class App extends Component {
           return (
             <div className="result-detail-box"
               key={result._id}
-            >
+            > 
               <h3>{result._source.activity}</h3>
               <img 
                 src={result._source.img}
                 alt={result._source.activity}
               />
               <span>{result._source.provider}</span>
-              <p>Start Date: {result._source.activityStartDate}</p>
-              <p>End Date: {result._source.activityEndDate}</p>
+              {result._type === 'daycare'
+                ? 
+                <>
+                  <p>
+                    Days Available: {result._source.daysAvaliable}
+                  </p>
+                </>
+                :
+                <>
+                  <p>
+                    Start Date: {result._source.activityStartDate}
+                  </p>
+                  <p>
+                    End Date: {result._source.activityEndDate}
+                  </p>
+                </>
+              }
               <p>Location: {result._source.location}</p>
               <p>Cost: ${result._source.cost}</p>
               <p>{result._source.description}</p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ResultList from './ResultList/ResultList';
+import { HashRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -28,18 +29,18 @@ class App extends Component {
   }
   performQuery = () => {
     var shouldConditions = []
-    if(this.state.location)
-      shouldConditions.push({ "match": { "location":  this.state.location }})
-    if(this.state.age) {
-      shouldConditions.push({ "range": { "minAge": { "lte" : this.state.age}}})
-      shouldConditions.push({ "range": { "maxAge": { "gte" : this.state.age}}})
+    if (this.state.location)
+      shouldConditions.push({ "match": { "location": this.state.location } })
+    if (this.state.age) {
+      shouldConditions.push({ "range": { "minAge": { "lte": this.state.age } } })
+      shouldConditions.push({ "range": { "maxAge": { "gte": this.state.age } } })
     }
-    if(this.startDate && this.state.type!=='daycare')
-      shouldConditions.push({ "range": { "activityStartDate": { "lte" : this.state.startDate}}})
-    if(this.endDate && this.state.type!=='daycare')
-      shouldConditions.push({ "range": { "activityEndDate": { "gte" : this.state.endDate}}})
-    
-    var innerQuery =  {
+    if (this.startDate && this.state.type !== 'daycare')
+      shouldConditions.push({ "range": { "activityStartDate": { "lte": this.state.startDate } } })
+    if (this.endDate && this.state.type !== 'daycare')
+      shouldConditions.push({ "range": { "activityEndDate": { "gte": this.state.endDate } } })
+
+    var innerQuery = {
       "query": {
         "bool": {
           "must": shouldConditions
@@ -51,7 +52,7 @@ class App extends Component {
       index: this.state.type,
       type: this.state.type,
       body: innerQuery
-    }).then( (resp) => {
+    }).then((resp) => {
       console.log(resp);
       this.setState({
         resp: resp
@@ -62,85 +63,89 @@ class App extends Component {
   }
   render() {
     return (
+      <Router>
       <div className="App">
-        <header>
-          <h2>Kids Play Central</h2>
-        </header>
+        
+          <header>
+            <h2>Kids Play Central</h2>
+          </header>
 
-        <div className="form">
-          <h2>Search Form</h2>
-          {/* <pre>
+          <div className="form">
+            <h2>Search Form</h2>
+            {/* <pre>
             {JSON.stringify(this.state)}
           </pre> */}
 
-          <label>
-            Location:
-          </label>
-          <input
-            type="text"
-            placeholder="Location"
-            onChange={this.handleChange('location')}
-          />
-          <br />
-
-          <div className="div-block">
-            <label className="inline-text">
-              Start Date:
-            </label>
-            <input
-              type="date"
-              placeholder="Start Date"
-              onChange={this.handleChange('startDate')}
-              className="input-date"
-            />
-          </div>
-
-          <div className="div-block">
-            <label className="inline-text">
-              End Date:
-            </label>
-            <input
-              type="date"
-              placeholder="End Date"
-              onChange={this.handleChange('endDate')}
-              className="input-date"
-            />
-          </div>
-          <br />
-
-          <div className="div-block">
-            <label className="inline-text">
-              Age:
+            <label>
+              Location:
           </label>
             <input
-              type="number"
-              placeholder="Age"
-              onChange={this.handleChange('age')}
-              className="input-age"
+              type="text"
+              placeholder="Location"
+              onChange={this.handleChange('location')}
             />
-          </div>
+            <br />
 
-          <div className="div-block">
-            <label className="inline-text">
-              Activity Type:
+            <div className="div-block">
+              <label className="inline-text">
+                Start Date:
             </label>
-            <select onChange={this.handleChange('type')}>
-              <option value={'camp'}>Camp</option>
-              <option value={'daycare'}>Day Care</option>
-              <option value={'activity'}>Activity</option>
-            </select>
-          </div>
+              <input
+                type="date"
+                placeholder="Start Date"
+                onChange={this.handleChange('startDate')}
+                className="input-date"
+              />
+            </div>
 
-          <br />
-          <button
-            onClick={this.handleSubmit}
-          >
-            Search
+            <div className="div-block">
+              <label className="inline-text">
+                End Date:
+            </label>
+              <input
+                type="date"
+                placeholder="End Date"
+                onChange={this.handleChange('endDate')}
+                className="input-date"
+              />
+            </div>
+            <br />
+
+            <div className="div-block">
+              <label className="inline-text">
+                Age:
+          </label>
+              <input
+                type="number"
+                placeholder="Age"
+                onChange={this.handleChange('age')}
+                className="input-age"
+              />
+            </div>
+
+            <div className="div-block">
+              <label className="inline-text">
+                Activity Type:
+            </label>
+              <select onChange={this.handleChange('type')}>
+                <option value={'camp'}>Camp</option>
+                <option value={'daycare'}>Day Care</option>
+                <option value={'activity'}>Activity</option>
+              </select>
+            </div>
+
+            <br />
+            <button
+              onClick={this.handleSubmit}
+            >
+              Search
           </button>
-        </div>
+          </div>
           <ResultList resp={this.state.resp} />
+          {/* <Route path="/:id" /> */}
         
       </div>
+      </Router>
     );
   }
 }
