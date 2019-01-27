@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-class App extends Component {
+class ResultList extends Component {
   handleDetail = (id) => {
     console.log('in handleDetail', id);
+    this.props.history.push(`/${id}`);
   }
   render() {
     if(!this.props.resp) {
@@ -17,37 +20,40 @@ class App extends Component {
             <div className="result-detail-box"
               key={result._id}
             > 
+              <span>{result._source.provider}</span>
               <h3>{result._source.activity}</h3>
               <img 
                 src={result._source.img}
                 alt={result._source.activity}
               />
-              <span>{result._source.provider}</span>
               {result._type === 'daycare'
                 ? 
                 <>
-                  <p>
+                  <span>
                     Days Available: {result._source.daysAvaliable}
-                  </p>
+                  </span>
                 </>
                 :
                 <>
-                  <p>
+                  <span>
                     Start Date: {result._source.activityStartDate}
-                  </p>
-                  <p>
+                  </span>
+                  <span>
                     End Date: {result._source.activityEndDate}
-                  </p>
+                  </span>
                 </>
               }
-              <p>Location: {result._source.location}</p>
-              <p>Cost: ${result._source.cost}</p>
+              {/* <p>Location: {result._source.location}</p> */}
+              <span>Cost: ${result._source.cost}</span>
               <p>{result._source.description}</p>
-              <p>
-                <button onClick={() => this.handleDetail(result._id)}>
+              <div className="button-div">
+                <button 
+                  onClick={() => this.handleDetail(result._id)}
+                  className="learn-button"
+                >
                   Learn More
                 </button>
-              </p>
+              </div>
             </div>
           )
         })}
@@ -56,4 +62,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(ResultList);
