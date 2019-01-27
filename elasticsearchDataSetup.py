@@ -4,7 +4,7 @@ es = Elasticsearch()
 indexName= "kids-central-activities"
 docType='activity'
 
-doc = {
+doc = { 
     'activity': 'activityName',
     'description': 'Play with legos',
     'timestamp': datetime.now(),

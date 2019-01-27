@@ -10,21 +10,27 @@ class App extends Component {
     var elasticsearch = require('elasticsearch');
     this.state = {
       client: new elasticsearch.Client(),
-      location: '',
-      age: '',
-      startDate: '',
-      endDate: '',
-      type: 'Art'
+      activity: {
+        location: '',
+        age: '',
+        startDate: '',
+        endDate: '',
+        type: 'Art',
+      },
+      resp: null,
     }
   }
   handleSubmit = () => {
-    console.log(this.state);
+    console.log(this.state.activity);
     this.performQuery();
   }
   handleChange = propertyName => (event) => {
-    console.log(this.state)
+    console.log(this.state.activity)
     this.setState({
-      [propertyName]: event.target.value,
+      activity: {
+        ...this.state.activity,
+        [propertyName]: event.target.value,
+      }
     });
   }
   performQuery = () => {
@@ -34,12 +40,15 @@ class App extends Component {
       body: {
         query: {
           match: {
-            "location": this.state.location
+            "location": this.state.activity.location
           }
         }
       }
     }).then(function (resp) {
       console.log(resp);
+      this.setState({
+        resp
+      })
     }, function (err) {
       console.trace(err.message);
     });
@@ -53,9 +62,6 @@ class App extends Component {
 
         <div className="form">
           <h2>Search Form</h2>
-          {/* <pre>
-            {JSON.stringify(this.state)}
-          </pre> */}
 
           <label>
             Location:
@@ -126,6 +132,7 @@ class App extends Component {
         </div>
         <div>
           <h2>Search Results</h2>
+          {this.state.response}
         </div>
       </div>
     );
