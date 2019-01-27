@@ -11,7 +11,8 @@ class App extends Component {
       age: '',
       startDate: '',
       endDate: '',
-      type: 'camp'
+      type: 'camp',
+      resp: null
     }
   }
   handleSubmit = () => {
@@ -35,8 +36,11 @@ class App extends Component {
           }
         }
       }
-    }).then(function (resp) {
+    }).then( (resp) => {
       console.log(resp);
+      this.setState({
+        resp: resp
+      })
     }, function (err) {
       console.trace(err.message);
     });
