@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class ResultList extends Component {
   handleDetail = (id) => {
     console.log('in handleDetail', id);
-    this.props.history.push(`/${id}`);
+    this.props.history.push(`/learn-more`);
   }
   render() {
     if(!this.props.resp) {
@@ -20,32 +20,35 @@ class ResultList extends Component {
             <div className="result-detail-box"
               key={result._id}
             > 
+              <div className="result-img-div">
               <img
                 src={result._source.img}
                 alt={result._source.activity}
                 className="result-img"
               />
-              <span>{result._source.provider}</span>
-              <h3>{result._source.activity}</h3>
+              </div>
+              <div className="result-description-div">
+                <span>{result._source.provider}</span>
+                <h3>{result._source.activity}</h3>
               {result._type === 'daycare'
                 ? 
                 <>
-                  <span>
-                    Days Available: {result._source.daysAvaliable}
+                  <span className="detail-span">
+                    {result._source.daysAvaliable}
                   </span>
                 </>
                 :
                 <>
-                  <span>
-                    Start Date: {result._source.activityStartDate}
+                  <span className="detail-span">
+                    {result._source.activityStartDate}
                   </span>
-                  <span>
+                  {/* <span className="detail-span">
                     End Date: {result._source.activityEndDate}
-                  </span>
+                  </span> */}
                 </>
               }
-              {/* <p>Location: {result._source.location}</p> */}
-              <span>Cost: ${result._source.cost}</span>
+              <span className="detail-span">${result._source.cost}</span>
+              <span className="detail-span">{result._source.location}</span>
               <p>{result._source.description}</p>
               <div className="button-div">
                 <button 
@@ -54,6 +57,7 @@ class ResultList extends Component {
                 >
                   Learn More
                 </button>
+              </div>
               </div>
             </div>
           )

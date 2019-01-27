@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import ResultList from './ResultList/ResultList';
 import DetailedPage from './DetailedPage';
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faChild } from '@fortawesome/free-solid-svg-icons'
+library.add(faChild)
 
 class App extends Component {
   constructor(props) {
@@ -66,8 +70,20 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        
           <header>
+            <h1>
+              <Link 
+                to="/"
+                className="link"
+              >
+              <FontAwesomeIcon 
+                icon="child" 
+                color="#FA001D"
+              /> 
+              {' '} 
+              Ready Play
+              </Link>
+            </h1>
             <img src="https://pli.io/2OVjSU.png" alt="header img" className="img-header" />
           </header>
 
@@ -115,7 +131,7 @@ class App extends Component {
             <div className="div-block-left">
               <label className="inline-text">
                 Age:
-          </label>
+              </label>
               <input
                 type="number"
                 placeholder="Age"
@@ -145,7 +161,7 @@ class App extends Component {
           </div>
           <ResultList resp={this.state.resp} />
           <Route 
-            path="/:id" 
+            exact path="/learn-more" 
             resp={this.state.resp}
             component={DetailedPage}
           />

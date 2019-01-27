@@ -27,7 +27,7 @@ class DetailedPage extends Component {
       return (
         <div className="DetailPage">
           <h2>Detail Page</h2>
-
+          
         </div>
       );
     }

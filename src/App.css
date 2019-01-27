@@ -2,6 +2,7 @@
   width: 100%;
   margin: 0 auto;
   margin-bottom: 40px;
+  color: hsl(0, 0%, 23%);
 }
 
 .form {
@@ -16,7 +17,8 @@
 } */
 
 input {
-  width: 97%;
+  color: hsl(0, 0%, 23%);
+  width: 94%;
   padding: 10px;
   margin: 5px;
   border: 2px solid #707070;
@@ -24,6 +26,7 @@ input {
 }
 
 select {
+  color: hsl(0, 0%, 23%);
   margin: 5px;
   background-color: #FFF;
   width: 157px;
@@ -46,9 +49,9 @@ select {
   float: left;
 }
 
-.button-div {
+/* .button-div {
   float: right;
-}
+} */
 
 .search-button {
   background-color: #FA001D;
@@ -82,24 +85,51 @@ select {
 }
 
 .results {
-  margin: 7px;
+  margin-left: 10px;
+  padding: 5px;
 }
 
 .result-detail-box {
-  width: 383px;
+  background-color: #FAFAFA;
+  width: 374px;
   height: auto;
   border: 2px solid #707070;
   border-radius: 10px;
   margin: 5px;
-  padding: 7px;
+  padding: 0px;
+}
+
+.result-img-div {
+  height: 230px;
+  border-bottom: 2px solid #707070;
 }
 
 .result-img {
-  padding: 5px;
-  width: 378px;
-  height: 240px;
+  width: 374px;
+  height: 230px;
+  z-index: -1;
+  border-radius: 7px 7px 0 0;
+}
+
+.result-description-div {
+  padding: 10px;
+}
+
+.detail-span {
+  font-size: 14px;
+  margin: 8px;
+}
+ 
+h1 {
+  padding: 0px;
+  margin-left: 10px;
 }
 
 h2, h3 {
   margin: 0px;
+}
+
+.link {
+  text-decoration: none;
+  color: hsl(0, 0%, 28%);
 }
