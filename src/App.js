@@ -46,9 +46,6 @@ class App extends Component {
       }
     }).then(function (resp) {
       console.log(resp);
-      this.setState({
-        resp
-      })
     }, function (err) {
       console.trace(err.message);
     });
@@ -132,7 +129,7 @@ class App extends Component {
         </div>
         <div>
           <h2>Search Results</h2>
-          {this.state.response}
+
         </div>
       </div>
     );
