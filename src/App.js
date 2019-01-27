@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ResultList from './ResultList/ResultList';
+import DetailedPage from './DetailedPage';
 import { HashRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
@@ -67,7 +68,7 @@ class App extends Component {
       <div className="App">
         
           <header>
-            <h2>Kids Play Central</h2>
+            <img src="https://pli.io/2OVjSU.png" alt="header img" className="img-header" />
           </header>
 
           <div className="form">
@@ -81,12 +82,12 @@ class App extends Component {
           </label>
             <input
               type="text"
-              placeholder="Location"
+              placeholder="Enter a zip code"
               onChange={this.handleChange('location')}
             />
             <br />
 
-            <div className="div-block">
+            <div className="div-block-left">
               <label className="inline-text">
                 Start Date:
             </label>
@@ -98,7 +99,7 @@ class App extends Component {
               />
             </div>
 
-            <div className="div-block">
+            <div className="div-block-right">
               <label className="inline-text">
                 End Date:
             </label>
@@ -111,7 +112,7 @@ class App extends Component {
             </div>
             <br />
 
-            <div className="div-block">
+            <div className="div-block-left">
               <label className="inline-text">
                 Age:
           </label>
@@ -123,10 +124,10 @@ class App extends Component {
               />
             </div>
 
-            <div className="div-block">
+            <div className="div-block-right">
               <label className="inline-text">
                 Activity Type:
-            </label>
+              </label>
               <select onChange={this.handleChange('type')}>
                 <option value={'camp'}>Camp</option>
                 <option value={'daycare'}>Day Care</option>
@@ -137,13 +138,17 @@ class App extends Component {
             <br />
             <button
               onClick={this.handleSubmit}
+              className="search-button"
             >
               Search
           </button>
           </div>
           <ResultList resp={this.state.resp} />
-          {/* <Route path="/:id" /> */}
-        
+          <Route 
+            path="/:id" 
+            resp={this.state.resp}
+            component={DetailedPage}
+          />
       </div>
       </Router>
     );
