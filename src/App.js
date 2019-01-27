@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import ResultList from './ResultList/ResultList';
 
 class App extends Component {
   constructor(props) {
@@ -26,17 +27,31 @@ class App extends Component {
     });
   }
   performQuery = () => {
+    var shouldConditions = []
+    if (this.state.location)
+      shouldConditions.push({ "match": { "location": this.state.location } })
+    if (this.state.age) {
+      shouldConditions.push({ "range": { "minAge": { "lte": this.state.age } } })
+      shouldConditions.push({ "range": { "maxAge": { "gte": this.state.age } } })
+    }
+    if (this.startDate && this.state.type !== 'daycare')
+      shouldConditions.push({ "range": { "activityStartDate": { "lte": this.state.startDate } } })
+    if (this.endDate && this.state.type !== 'daycare')
+      shouldConditions.push({ "range": { "activityEndDate": { "gte": this.state.endDate } } })
+
+    var innerQuery = {
+      "query": {
+        "bool": {
+          "must": shouldConditions
+        }
+      }
+    }
+
     this.state.client.search({
       index: this.state.type,
       type: this.state.type,
-      body: {
-        query: {
-          match: {
-            "location": this.state.location
-          }
-        }
-      }
-    }).then( (resp) => {
+      body: innerQuery
+    }).then((resp) => {
       console.log(resp);
       this.setState({
         resp: resp
@@ -123,9 +138,8 @@ class App extends Component {
             Search
           </button>
         </div>
-        <div>
-          <h2>Search Results</h2>
-        </div>
+          <ResultList resp={this.state.resp} />
+        
       </div>
     );
   }

@@ -13,7 +13,8 @@
     "activityStartDate": "2019-08-01T10:00:00",
     "activityEndDate": "2019-08-14T09:00:00",
     "registrationURL": "https://apm.activecommunities.com/saintpaul/Activity_Search/minecraft-creative-arlington-hills/49192",
-    "registrationStartDate": "2019-06-01T10:00:00"
+    "registrationStartDate": "2019-06-01T10:00:00",
+    "img": "images/minecraft.jpg"
  },
  {
     "activity": "Java Minecraft Mod Development Camp",

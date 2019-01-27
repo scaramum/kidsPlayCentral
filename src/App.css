@@ -1,6 +1,7 @@
 .App {
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .form {
@@ -13,7 +14,7 @@ input {
   padding: 10px;
   margin: 5px;
   border: 1px solid #000;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 .inline-text {
@@ -32,4 +33,15 @@ input {
 
 .input-age {
   width: 70%;
+}
+
+.results {
+  margin: 7px;
+}
+
+.result-detail-box {
+  height: auto;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin: 5px;
 }
