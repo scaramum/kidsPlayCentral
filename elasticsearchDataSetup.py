@@ -1,34 +1,27 @@
+import json
 from datetime import datetime
 from elasticsearch import Elasticsearch
 es = Elasticsearch()
 indexName= "kids-central-activities"
 docType='activity'
 
-doc = {
-    'activity': 'activityName',
-    'description': 'Play with legos',
-    'timestamp': datetime.now(),
-    'location': '489y5',
-    'ammenenties': ['accessable', 'before transportation'],
-    'minAge': 5,
-    'maxAge': 10,
-    'category': 'sport',
-    'cost': 150,
-    'provider': 'unknown',
-    'activityStartDate': '2019-01-26T13:18:15',
-    'activityEndDate': '2019-01-26T13:18:15',
-    'registrationStartDate': datetime.now()
-}
+def loadData(sourceDoc, docType, expectedDocs):
+    with open(sourceDoc) as f:
+        data = json.load(f)
+    id = 0
+    for d in data:
+        # print(d)
+        res = es.index(index=docType, doc_type=docType, id=id, body=d)
+        print(res['result'])
+        id=id+1
+    es.indices.refresh(index=docType)
+    
+    res = es.search(index=docType, body={"query": {"match_all": {}}})
+    print("Got %d Hits. Expected %d" % (res['hits']['total'], expectedDocs))
 
-res = es.index(index=indexName, doc_type=docType, id=1, body=doc)
-print(res['result'])
+# for hit in res['hits']['hits']:
+#     print("%(activityStartDate)s %(activity)s: %(location)s" % hit["_source"])
 
-res = es.get(index=indexName, doc_type=docType, id=1)
-print(res['_source'])
-
-es.indices.refresh(index=indexName)
-
-res = es.search(index=indexName, body={"query": {"match_all": {}}})
-print("Got %d Hits:" % res['hits']['total'])
-for hit in res['hits']['hits']:
-    print("%(timestamp)s %(activity)s: %(activityDate)s" % hit["_source"])
+loadData('CampsData.json', 'camp',7)
+loadData('DayCareData.json', 'daycare', 3)
+loadData('activityData.json', 'activity', 3)
