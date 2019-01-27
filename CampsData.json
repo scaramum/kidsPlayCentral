@@ -14,7 +14,7 @@
     "activityEndDate": "2019-08-14T09:00:00",
     "registrationURL": "https://apm.activecommunities.com/saintpaul/Activity_Search/minecraft-creative-arlington-hills/49192",
     "registrationStartDate": "2019-06-01T10:00:00",
-    "img": "images/minecraft.jpg"
+    "img": "https://pli.io/2OaiNB.jpg"
  },
  {
     "activity": "Java Minecraft Mod Development Camp",
@@ -31,7 +31,8 @@
     "activityStartDate": "2019-06-10T09:00:00",
     "activityEndDate": "2019-06-15T14:00:00",
     "registrationURL": "http://www.techacademymn.com/events/minecraft-game-designer-6-12/",
-    "registrationStartDate": "2019-02-01T06:00:00"
+    "registrationStartDate": "2019-02-01T06:00:00",
+    "img": "https://pli.io/2OaiNB.jpg"
  },
  {
     "activity": "Robotic Builders Camp",
@@ -48,7 +49,8 @@
     "activityStartDate": "2019-06-14T08:00:00",
     "activityEndDate": "2019-06-14T13:00:00",
     "registrationURL": "https://stillwater.ce.eleyo.com/course/2216/spring-summer-2018/robotic-builders",
-    "registrationStartDate": "2019-02-01T06:00:00"
+    "registrationStartDate": "2019-02-01T06:00:00",
+    "img": "https://pli.io/2OaEpZ.jpg"
  },
  {
     "activity": "Intro to Coding - Preschool Camp",
@@ -65,7 +67,8 @@
     "activityStartDate": "2019-06-08T08:30:00",
     "activityEndDate": "2019-06-30T16:00:00",
     "registrationURL": "https://sowashco.ce.eleyo.com/course/14992/summer-2018/intro-to-coding",
-    "registrationStartDate": "2019-02-01T08:00:00"
+    "registrationStartDate": "2019-02-01T08:00:00",
+    "img": "https://pli.io/2Oallm.jpg"
  },
  {
     "activity": "iD Tech Camps: #1 in STEM Education - Held at Macalester",
@@ -82,7 +85,8 @@
     "activityStartDate": "2019-07-08T08:30:00",
     "activityEndDate": "2019-07-12T16:00:00",
     "registrationURL": "https://www.idtech.com/register#/reg-flow/avail-charts-filters?lid=45&rgnad=true",
-    "registrationStartDate": "2019-02-01T08:00:00"
+    "registrationStartDate": "2019-02-01T08:00:00",
+    "img": "https://pli.io/2OaqBa.jpg"
  },
  {
     "activity": "Nike Tennis Camp at University of Minnesota",
@@ -99,7 +103,8 @@
     "activityStartDate": "2019-06-23T08:30:00",
     "activityEndDate": "2019-06-27T17:00:00",
     "registrationURL": "https://www.ussportscamps.com/tennis/nike/university-of-minnesota-nike-tennis-camp#detailsContent",
-    "registrationStartDate": "2019-01-15T08:00:00"
+    "registrationStartDate": "2019-01-15T08:00:00",
+    "img": "https://pli.io/2Od2KW.jpg"
  },
  {
     "activity": "Nike Tennis Camp at University of Minnesota",
@@ -116,5 +121,6 @@
     "activityStartDate": "2019-06-23T08:30:00",
     "activityEndDate": "2019-06-27T17:00:00",
     "registrationURL": "https://www.ussportscamps.com/tennis/nike/university-of-minnesota-nike-tennis-camp#detailsContent",
-    "registrationStartDate": "2019-01-15T08:00:00"
+    "registrationStartDate": "2019-01-15T08:00:00",
+    "img": "https://pli.io/2OdtEq.jpg"
  }]

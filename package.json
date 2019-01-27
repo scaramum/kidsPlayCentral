@@ -5,6 +5,7 @@
   "dependencies": {
     "@appbaseio/reactivesearch": "^3.0.0-alpha.10",
     "elasticsearch": "^15.3.1",
+    "file-loader": "^3.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
