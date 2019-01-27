@@ -10,7 +10,6 @@ def loadData(sourceDoc, docType, expectedDocs):
         data = json.load(f)
     id = 0
     for d in data:
-        # print(d)
         res = es.index(index=docType, doc_type=docType, id=id, body=d)
         print(res['result'])
         id=id+1

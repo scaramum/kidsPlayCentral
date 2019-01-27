@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-const indexName = "kids-central-activities";
-const docType = 'activity';
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +11,7 @@ class App extends Component {
       age: '',
       startDate: '',
       endDate: '',
-      type: 'Art'
+      type: 'camp'
     }
   }
   handleSubmit = () => {
@@ -29,8 +26,8 @@ class App extends Component {
   }
   performQuery = () => {
     this.state.client.search({
-      index: indexName,
-      type: docType,
+      index: this.state.type,
+      type: this.state.type,
       body: {
         query: {
           match: {
@@ -109,11 +106,9 @@ class App extends Component {
               Activity Type:
             </label>
             <select onChange={this.handleChange('type')}>
-              <option value={'Art'}>Art</option>
-              <option value={'Language'}>Language</option>
-              <option value={'Outdoors'}>Outdoors</option>
-              <option value={'Sports'}>Sports</option>
-              <option value={'STEM'}>STEM</option>
+              <option value={'camp'}>Camp</option>
+              <option value={'daycare'}>Day Care</option>
+              <option value={'activity'}>Activity</option>
             </select>
           </div>
 
